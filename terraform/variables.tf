@@ -3,11 +3,16 @@ variable "aws_region" {
 }
 
 variable "db_username" {
-  default   = "admin"
+  type      = string
   sensitive = true
 }
 
 variable "db_password" {
-  default   = "admin123"
+  type      = string
+  sensitive = true
+}
+
+variable "pgadmin_passwd" {
+  type      = string
   sensitive = true
 }
