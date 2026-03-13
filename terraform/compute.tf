@@ -1,5 +1,6 @@
 data "aws_ami" "ubuntu" {
   most_recent = true
+  owners      = ["099720109477"]
 
   filter {
     name   = "name"
@@ -23,4 +24,6 @@ resource "aws_instance" "my-instance" {
   tags = {
     Name = "image-builder-instance"
   }
+
+  depends_on = [aws_db_instance.pg]
 }
